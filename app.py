@@ -7,7 +7,7 @@ async def first_endpoint(response: Response):
     response.headers["Content-Type"] = "application/json"
     response.headers["Authorization"] = "Bearer token123"
     response.status_code = 200
-    return {Headers : {
+    return {"Headers : {
 
             'Content-Type': 'application/json',
 
@@ -15,11 +15,27 @@ async def first_endpoint(response: Response):
 
  }
 
-Status : 200}
+Status : 200"}
 
 @app.get("/second")
 async def second_endpoint(response: Response):
     response.headers["Content-Type"] = "application/json"
     response.headers["Authorization"] = "Bearer token123"
     response.status_code = 400
-    return {"param1": "value1", "param2": "value2"}
+    return {Headers : {
+
+            'Content-Type': 'application/json',
+
+            'Authorization': 'Bearer token123'
+
+}
+
+Body : {"
+
+            'param1': 'value1',
+
+            'param2': 'value2'
+
+}
+
+Status : 400"}
